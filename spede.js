@@ -1,12 +1,11 @@
-var currentButton = null;
-var buttons = [];
-var ticksQueued = [];
-var ticks = 0;
-var score = 0;
-
-var speed = 40;
-var initialInterval = 1400;
-var maximumMisses = 20;
+var currentButton = null,
+    buttons = [],
+    ticksQueued = [],
+    ticks = 0,
+    score = 0,
+    speed = 40,
+    initialInterval = 1400,
+    maximumMisses = 20;
 
 function start() {
     console.log("Start");
@@ -78,8 +77,6 @@ function tick() {
     }
 
     ticks++;
-    // console.log("Tick #" + ticks + ", interval " + gameTicker.interval + "ms");
-
     currentButton && (currentButton.state = "");
     currentButton = buttons[parseInt(Math.random() * buttons.length)];
     currentButton.state = "hilighted";
